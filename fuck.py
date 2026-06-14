@@ -30,7 +30,7 @@ OWNER_ID = int(os.getenv("OWNER_ID"))
 MONGO_URL = os.getenv("MONGO_URL")
 
 mongo = MongoClient(MONGO_URL)
-db = mongo["BANALL"]
+db = mongo[""]
 users_db = db["users"]
 groups_db = db["groups"]
 
@@ -74,8 +74,8 @@ def start_ui(name):
 def help_ui():
     return (
         "**📜 ᴄᴏᴍᴍᴀɴᴅ ᴍᴇɴᴜ**\n\n"
-        "**❖ /banall  —  ғᴜʟʟ ᴍᴀss ʙᴀɴ**\n"
-        "**❖ /unbanall  —  ᴀʟʟ ᴍᴇᴍʙᴇʀs ᴜɴʙᴀɴ**\n"
+        "**❖ /removeall  —  ғᴜʟʟ ᴍᴀss ʙᴀɴ**\n"
+        "**❖ /addall  —  ᴀʟʟ ᴍᴇᴍʙᴇʀs ᴜɴʙᴀɴ**\n"
         "**❖ /id  —  ᴜsᴇʀ/ᴄʜᴀᴛ ɪᴅ**\n"
         "**❖ /info  —  ᴘʀᴏғɪʟᴇ ɪɴғᴏ**\n"
         "**❖ /stats  —  ᴅᴀᴛᴀʙᴀsᴇ ᴄᴏᴜɴᴛ**\n"
@@ -193,9 +193,9 @@ async def info_cmd(_, msg):
     username = f"@{u.username}" if u.username else "None"
 
     await msg.reply(
-        f"👤 ɴᴀᴍᴇ: {u.first_name}\n"
-        f"🆔 ɪᴅ: {u.id}\n"
-        f"🏷 ᴜsᴇʀɴᴀᴍᴇ: {username}"
+        f"🤧 ɴᴀᴍᴇ: {u.first_name}\n"
+        f"👽 ɪᴅ: {u.id}\n"
+        f"😼 ᴜsᴇʀɴᴀᴍᴇ: {username}"
     )
 # ================= STATS =================
 @app.on_message(filters.command("stats"))
@@ -227,9 +227,9 @@ async def bc_cmd(_, msg):
         await asyncio.sleep(0.03)  # anti spam
 
     await msg.reply(
-        f"📣 ʙʀᴏᴀᴅᴄᴀsᴛ ᴄᴏᴍᴘʟᴇᴛᴇ\n"
+        f"😎 ʙʀᴏᴀᴅᴄᴀsᴛ ᴄᴏᴍᴘʟᴇᴛᴇ\n"
         f"✅ sᴇɴᴛ: {sent}\n"
-        f"❌ ғᴀɪʟᴇᴅ: {failed}"
+        f"🤡 ғᴀɪʟᴇᴅ: {failed}"
     ) 
 # ========================= RESTART =========================
 @app.on_message(filters.command("restart") & filters.user(OWNER_ID))
